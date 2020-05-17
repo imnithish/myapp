@@ -19,9 +19,15 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton.icon(
-          color: Colors.deepOrange,
-          icon: Icon(Icons.mail),
-          label: Text("mail"),
+          color: Colors.red[600],
+          icon: Icon(
+            Icons.mail,
+            color: Colors.white,
+          ),
+          label: Text(
+            "Mail",
+            style: TextStyle(color: Colors.white, fontFamily: 'ProductSans', fontSize: 20),
+          ),
           onPressed: () {
             print("sup?");
           },
@@ -29,8 +35,10 @@ class Home extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Text("click"),
-        backgroundColor: Colors.redAccent,
+        child: Icon(
+          Icons.add
+        ),
+        backgroundColor: Colors.red[600],
       ),
     );
   }
