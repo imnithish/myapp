@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() =>
-    runApp(MaterialApp(
-        home: Home()
-    ));
+void main() => runApp(MaterialApp(home: Home()));
 
 class Home extends StatelessWidget {
   @override
@@ -15,21 +12,15 @@ class Home extends StatelessWidget {
           style: TextStyle(
               fontFamily: 'ProductSans',
               fontWeight: FontWeight.bold,
-              color: Colors.white
-          ),),
+              color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
       body: Center(
-        child: Text(
-          "Hey Nitheesh",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.grey,
-            letterSpacing: 2.0,
-            fontFamily: 'ProductSans',
-          ),
+        child: Image.asset(
+          'assets/two.jpg',
+          width: 200,
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -40,5 +31,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-
