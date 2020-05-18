@@ -1,108 +1,78 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: Card()));
+void main() => runApp(MaterialApp(home: Home()));
 
-class Card extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
       appBar: AppBar(
         title: Text(
-          "CARD APP",
+          "Hello",
           style: TextStyle(
               fontFamily: 'ProductSans',
               fontWeight: FontWeight.bold,
               color: Colors.white),
         ),
-        elevation: 2.0,
         centerTitle: true,
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.red[600],
       ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/two.jpg'),
-                radius: 100,
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Text("hello world"),
+            ),
+          ),
+          FlatButton.icon(
+            onPressed: () {},
+            color: Colors.red[600],
+            icon: Icon(
+              Icons.mail,
+              color: Colors.white,
+            ),
+            label: Text('Click',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'ProductSans',
+                    fontSize: 20)),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(20),
+              child: Text(
+                'hi',
+                style: TextStyle(fontSize: 20),
               ),
             ),
-            Divider(
-              height: 60,
-              color: Colors.grey[600],
-            ),
-            Text(
-              'NAME:',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'ProductSans',
-                  color: Colors.white,
-                  letterSpacing: 1.0),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              'Nitheesh Ag',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'ProductSans',
-                  fontWeight: FontWeight.bold,
-                  color: Colors.amberAccent[200],
-                  letterSpacing: 1.0),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text(
-              'CURRENT LEVEL:',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'ProductSans',
-                  color: Colors.white,
-                  letterSpacing: 1.0),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              '8',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'ProductSans',
-                  fontWeight: FontWeight.bold,
-                  color: Colors.amberAccent[200],
-                  letterSpacing: 1.0),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              children: <Widget>[
-                Icon(
-                  Icons.email,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  'IMNITHISH@LIVE.COM',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'ProductSans',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      letterSpacing: 1.0),
-                )
-              ],
-            )
-          ],
-        ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('hi'),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text('hello'),
+                color: Colors.red[600],
+              )
+            ],
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue[600],
       ),
     );
   }
