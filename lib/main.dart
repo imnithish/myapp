@@ -42,12 +42,15 @@ class Home extends StatelessWidget {
                     fontFamily: 'ProductSans',
                     fontSize: 20)),
           ),
-          Container(
-            color: Colors.cyan,
-            padding: EdgeInsets.all(20),
-            child: Text(
-              'hi',
-              style: TextStyle(fontSize: 50),
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(20),
+              child: Text(
+                'hi',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ),
           Column(
@@ -61,6 +64,7 @@ class Home extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(10),
                 child: Text('hello'),
+                color: Colors.red[600],
               )
             ],
           ),
@@ -69,7 +73,7 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.add),
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.blue[600],
       ),
     );
   }
