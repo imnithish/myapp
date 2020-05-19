@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() => runApp(MaterialApp(
       home: QuoteList(),
@@ -28,29 +29,10 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: quotes.map((quotes) => quotesTemplate(quotes)).toList(),
-      ),
-    );
-  }
-
-  Widget quotesTemplate(quote) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            Text(
-              quote.text,
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Text(quote.author)
-          ],
-        ),
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: quotes.map((quotes) => QuoteCard(quote: quotes)).toList(),
       ),
     );
   }
 }
+
