@@ -4,4 +4,5 @@ class Quote {
 
   Quote({this.text, this.author});
 
+
 }
