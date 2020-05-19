@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: Card()));
 
-class Card extends StatelessWidget {
+class Card extends StatefulWidget {
+  @override
+  _CardState createState() => _CardState();
+}
+
+class _CardState extends State<Card> {
+  int level = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +79,7 @@ class Card extends StatelessWidget {
               height: 10,
             ),
             Text(
-              '8',
+              '$level',
               style: TextStyle(
                   fontSize: 20,
                   fontFamily: 'ProductSans',
@@ -85,9 +92,13 @@ class Card extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                Icon(
-                  Icons.email,
+                IconButton(
+                  icon: Icon(Icons.email),
+                  tooltip: 'reset',
                   color: Colors.white,
+                  onPressed: () {
+                    reset();
+                  },
                 ),
                 SizedBox(
                   width: 5,
@@ -106,6 +117,25 @@ class Card extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          update();
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.deepOrange,
+      ),
     );
+  }
+
+  void update() {
+    setState(() {
+      level += 1;
+    });
+  }
+
+  void reset() {
+    setState(() {
+      level = 0;
+    });
   }
 }
