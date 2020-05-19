@@ -28,7 +28,7 @@ class Card extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/two.jpg'),
-                radius: 100,
+                radius: 50,
               ),
             ),
             Center(
