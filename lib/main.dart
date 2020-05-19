@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'quote.dart';
 
-void main() =>
-    runApp(MaterialApp(
+void main() => runApp(MaterialApp(
       home: QuoteList(),
     ));
 
@@ -30,10 +29,7 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: quotes
-            .map((quotes) =>
-            Text('quote: ${quotes.text}\nauthor: ${quotes.author}'))
-            .toList(),
+        children: quotes.map((quotes) => quotesTemplate(quotes)).toList(),
       ),
     );
   }
@@ -41,18 +37,19 @@ class _QuoteListState extends State<QuoteList> {
   Widget quotesTemplate(quote) {
     return Card(
       margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Column(
-        children: <Widget>[
-          Text(
-            quote.text,
-          ),
-          SizedBox(
-            height: 6,
-          ),
-          Text(
-              quote.author
-          )
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            Text(
+              quote.text,
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Text(quote.author)
+          ],
+        ),
       ),
     );
   }
